@@ -13,16 +13,8 @@ html {
   min-width: 500px;
 }
 
-.navBar {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  height: 6rem;
-  justify-content: space-between;
-  padding: 0px 20px;
-  align-content: center;
-  background-color: white;
-  z-index: -1;
+.dropdown {
+  position: relative;
 }
 
 .searchContainer {
@@ -58,8 +50,9 @@ html {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 10rem;
-  width: 10rem;
+  height: 7rem;
+  width: 7rem;
+  margin-top: -2rem;
   border-radius: 100px;
   background: linear-gradient(45deg, #03c4df 8%, #ff7a00);
   padding-top: 0rem;
@@ -74,7 +67,7 @@ html {
 .logoContainer {
   display: flex;
   justify-content: center;
-  margin-top: -5rem;
+  margin-top: 0rem;
 }
 
 .formContainer {
@@ -116,86 +109,10 @@ p {
   text-align: center;
 }
 
-/* HAMBURGER RESPONSIVE NAVIGATION MENU */
-/* [ON BIG SCREEN] */
-/* navContainer */
-
-.navContainer {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  font-size: 2rem;
-}
-
-#page-nav {
-  width: 100%;
-  background: white;
-  position: sticky;
-  top: 0;
-  text-align: center;
-}
-
-/* Hide Hamburger */
-#page-nav label,
-#hamburger {
-  display: none;
-}
-
-/* Menu Items */
-#page-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 10px;
-}
-#page-nav ul li {
-  display: inline;
-  padding: 10px;
-}
-#page-nav ul li a {
-  color: black;
-  text-decoration: none;
-}
-
-/* [ON SMALL SCREENS] */
-@media screen and (max-width: 85rem) {
-  /* Show Hamburger */
-  #page-nav label {
-    display: block;
-    color: black;
-    font-style: none;
-    font-size: 40px;
-    padding: 10px;
-    width: 100%;
-  }
-
-  /* Break down menu items into vertical */
-  #page-nav ul li {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    position: fixed;
-    top: 1em;
-  }
-
-  #page-nav ul li {
-    border-top: 1px solid white;
-  }
-
-  /* Toggle show/hide menu on checkbox click */
-  #page-nav ul {
-    display: none;
-  }
-
-  #page-nav input:checked ~ ul {
-    display: block;
-  }
-}
-
 .signUpForm {
   display: grid;
   width: 23rem;
-  height: 34rem;
+  height: 35rem;
   margin: 0rem 2rem;
   background-color: white;
 }
@@ -230,10 +147,10 @@ p {
   font-size: 1.5rem;
 }
 
-button {
-  padding: 0.4rem 5.5rem;
+.formButton {
+  padding: 0.1rem 5.5rem;
   margin-bottom: 1.5rem;
-  margin-top: 1.2rem;
+  margin-top: 0.5rem;
   border: 1px solid black;
   border-radius: 4px;
   font-size: 2rem;
@@ -314,7 +231,7 @@ p.lesserText {
 
 .mapContainer {
   clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 88% 8%, 0% 0%);
-  height: 45rem;
+  height: 50rem;
   background: linear-gradient(#148494, #21393c);
   margin-top: -16rem;
   display: grid;
@@ -343,14 +260,15 @@ h2 {
   margin-left: 3rem;
 }
 
-.venueList {
+.venueList h2 {
   grid-area: list;
   font-family: sans-serif;
-  color: white;
+  color: black;
 }
 
 .mapEmbed iframe {
   height: 100%;
+  margin-bottom: 1rem;
 }
 
 .bottomContainer {
@@ -360,7 +278,7 @@ h2 {
   grid-area: b;
   border: 1px solid black;
   width: 50%;
-  background-color: #1b1815;
+  background-color: white;
   margin-left: auto;
   margin-right: auto;
   margin-top: -2rem;
@@ -379,12 +297,13 @@ h2 {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-top: 2rem;
   height: 10rem;
   width: 100%;
   background-color: white;
 }
 
-@media only screen and (max-width: 85rem) {
+@media only screen and (max-width: 91rem) {
   .logoContainer {
     visibility: hidden;
   }
@@ -395,6 +314,11 @@ h2 {
     height: auto;
     clip-path: none;
     padding: 1rem 0;
+  }
+
+  .formButton {
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .siteDescription {
@@ -456,6 +380,7 @@ h2 {
 
   .bottomText h2 {
     width: 90%;
+    margin-bottom: 0.5rem;
   }
 
   h2 {
@@ -466,10 +391,14 @@ h2 {
     margin-left: auto;
   }
 
+  .vemueList h2 {
+    color: black;
+  }
+
   .venueList {
     grid-area: list;
     font-family: sans-serif;
-    color: white;
+    color: black;
   }
 
   .mapEmbed iframe {
@@ -494,14 +423,15 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     border: 1px solid black;
-    width: 100%;
+    width: 80%;
   }
 
   .venueList {
     grid-area: list;
     font-family: sans-serif;
-    color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -576,19 +506,17 @@ h2 {
     font-size: 1.2rem;
   }
 
-  button {
-    padding: 0.4rem 5.5rem;
-    margin-bottom: 1.5rem;
-    margin-top: 1.2rem;
-    border: 1px solid black;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    box-sizing: border-box;
-    cursor: pointer;
-    background: linear-gradient(#03c4df, #148494);
-    width: 80%;
-    display: flexbox;
-    justify-content: center;
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    clip-path: none;
+    padding: 1rem 0;
+  }
+
+  .formButton {
+    margin-right: auto;
+    margin-left: 4.7rem;
   }
 
   button:hover {
@@ -608,6 +536,13 @@ h2 {
 
   .buttonContainer {
     display: flex;
+    width: 80%;
     justify-content: center;
+    color: black;
+  }
+
+  .mapEmbed iframe {
+    height: 100%;
+    margin-right: 1rem;
   }
 }
